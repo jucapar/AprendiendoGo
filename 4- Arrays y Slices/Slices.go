@@ -6,12 +6,12 @@ import "fmt"
 func main(){
     
     //Declaracion de un Slice make(tipoDeDato,longitud,capacidad)
-    //Longitud - Capacidad del slice inicial
-    //Capacidad - Capacidad maxima del slice, al superarse se añade espacio de memoria igual a la capacidad inicial
-    slice := make([]string, 2, 5)
-    slice[0] = "Hola";
-    slice[1] = "Mundo";
+    //tipoDeDato - Apuntador a un array
+    //Tamaño - Capacidad del slice inicial
+    //Capacidad(Opcional) - Capacidad maxima del slice, al superarse se duplica la capacidad del slice
+    slice := make([]string, 0)
+    slice = append(slice,"Hola","Mundo");
     
-    fmt.Println(slice[0]);
-    fmt.Println(slice[1]);
+    fmt.Println(slice);
+    fmt.Printf("El tamaño del slice es de %d y su capacidad es de %d",len(slice),cap(slice));
 }
